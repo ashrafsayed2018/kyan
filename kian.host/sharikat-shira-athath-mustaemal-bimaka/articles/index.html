@@ -17,17 +17,11 @@
     </div>
   </div>
 
-  <script>
-    // app.js
-
-// Fetch the articles from db.json
-fetch('db.json')
-  .then(response => response.json())
-  .then(data => {
+  <script  type="module">
+    import {data} from "./db.js";
     const articlesContainer = document.querySelector('.space-y-8');
-
-    // Loop through each article and create the HTML structure
-    data.forEach(article => {
+       // Loop through each article and create the HTML structure
+       data.forEach(article => {
       const articleCard = document.createElement('div');
       articleCard.className = 'bg-white rounded-lg shadow-md p-4';
 
@@ -51,7 +45,6 @@ fetch('db.json')
 
       articlesContainer.appendChild(articleCard);
     });
-  });
   </script>
 </body>
 
